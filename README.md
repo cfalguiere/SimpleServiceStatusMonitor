@@ -141,6 +141,7 @@ Please feel free to give feedback, [make requests for features or report bugs](h
 <tr><td>output/status-page.html</td><td>generated HTML page</td></tr>
 </table>
 
+There are roughly 150 lines of code (not including D3 library)
 
 ### Build a script
 
