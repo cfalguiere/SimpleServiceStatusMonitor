@@ -1,0 +1,28 @@
+	<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>D3 Test</title>
+        <script type="text/javascript" src="d3.v3/d3.v3.js"></script>
+        <script type="text/javascript" src="d3-status-panel.js"></script>
+        <script type="text/JavaScript">
+        <!--
+        function timedRefresh(timeoutPeriod) {
+	    setTimeout("location.reload(true);",timeoutPeriod);
+        }
+        //   -->
+        </script>
+    </head>
+    <body onload="JavaScript:timedRefresh(5000);">
+
+<h1> Services Status </h1>
+<p> At <%= date %> </p>
+<div id="svg"> </div>
+
+        <script type="text/javascript"> 
+var dataset = <%= data %>;
+statusPanel("#svg")
+        </script>
+
+    </body>
+</html>   
