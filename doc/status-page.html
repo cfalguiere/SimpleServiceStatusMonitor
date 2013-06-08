@@ -1,0 +1,28 @@
+	<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>D3 Test</title>
+        <script type="text/javascript" src="d3.v3/d3.v3.js"></script>
+        <script type="text/javascript" src="d3-status-panel.js"></script>
+        <script type="text/JavaScript">
+        <!--
+        function timedRefresh(timeoutPeriod) {
+	    setTimeout("location.reload(true);",timeoutPeriod);
+        }
+        //   -->
+        </script>
+    </head>
+    <body onload="JavaScript:timedRefresh(5000);">
+
+<h1> Services Status </h1>
+<p> At Sat Jun 08 13:55:50 CEST 2013 </p>
+<div id="svg"> </div>
+
+        <script type="text/javascript"> 
+var dataset = [{"server":"does not exist","url":"http://does not exist","serverstatus":64,"urlstatus":-1},{"server":"www.google.com","url":"http://www.google.com","serverstatus":0,"urlstatus":0}];
+statusPanel("#svg")
+        </script>
+
+    </body>
+</html>   
