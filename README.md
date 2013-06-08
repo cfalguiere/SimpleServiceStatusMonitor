@@ -23,10 +23,7 @@ It consists in:
 
 When the script runs, it checks the services, build a json string and generate a new HTML page from the template.
 
-Implementation details
-
-![image]("doc/screenshot-white.png")
-
+![image](https://github.com/cfalguiere/SimpleServiceStatusMonitor/blob/master/doc/screenshot-white.png)
 
 ## Prerequisites
 
