@@ -1,10 +1,10 @@
 # Simple Service Status Monitor
-===
+
 A simple service status monitor based on Groovy and D3
 
 
 ## Motivation
----
+
 Nagios or other monitoring tools are great but they requires some infrastructure (a web server, a database, a linux server …).
 
 This tool is a very simple status monitor HTML page. It relies on very common components and does not require an infrastructure or a database. 
@@ -14,7 +14,6 @@ As a consequence, it has no memory and you should publish the HTML file in the W
 It is also a [D3](http://d3js.org/) demo.
 
 ## Overview
----
 
 It consists in:
  
@@ -30,7 +29,7 @@ Implementation details
 
 
 ## Prerequisites
----
+
 The tools relies only on a few very common components
 
 - Groovy an Java based script langage. It's easy to setup. Check the [Groovy installation guide](http://groovy.codehaus.org/Installing+Groovy) .  
@@ -41,10 +40,10 @@ If Groovy is an issue, you may rewrite the script with another langage and share
 
 
 ## Getting Started
----
+
 
 ### install
----
+
 
 Clone the repository or download it as a [zip file]("https://github.com/cfalguiere/SimpleServiceStatusMonitor/archive/master.zip").
 
@@ -58,7 +57,7 @@ Get the [D3 library](http://d3js.org/) library (currently d3.V3) and extract in 
     unzip d3.v3.test.zip -d d3.v3
 
 ### setup 
----
+
 
 Edit [updateStatusPage.groovy]("updateStatusPage.groovy") to put your own services.
 
@@ -70,7 +69,7 @@ Look up the services map and replace with your own:
 
 
 ### run
----
+
 
 Open a terminal and run
 
@@ -83,7 +82,7 @@ Open a terminal and run
 Every minute, a new HTML page is generated. Here is an exemple [exemple status page]("doc/status-page.html").
 
 ### more setups
----
+
 
 #### check interval 
 
@@ -95,7 +94,7 @@ By default the script runs forever and check the services every minute. If you w
     
 
 #### change template 
----
+
 You may edit the template or provide a CSS Stylesheet pour change the look of this page.
 
 You may take care of these lines when changing the template
@@ -124,17 +123,17 @@ The page reloads itself every 5 minutes. You may change the 5000 value (en milli
    
 
 ## Feedback
----
+
 Please feel free to give feedback, [make requests for features or report bugs](https://github.com/cfalguiere/SimpleServiceStatusMonitor/issues) and share your contributions (more check functions, CSS stylesheets, …).
 
    
 <a name="implementation-details"/>
 
 ## Implementation details
----
+
 
 ### Main files
----
+
 
 <table>
 <tr><td>file</td><td>description</td></tr>
@@ -147,7 +146,7 @@ Please feel free to give feedback, [make requests for features or report bugs](h
 
 
 ### Build a script
----
+
 
 If Groovy is not convenient, you may rewrite the script with another langage and share it.
 
@@ -178,7 +177,7 @@ This result in
 
 
 ## License
----
+
 
 Copyright (C) 2013 
 
