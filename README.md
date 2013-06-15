@@ -29,7 +29,7 @@ When the script runs, it checks the services, build a json string and generate a
 
 The tools relies only on a few very common components
 
-- Groovy an Java based script langage. It's easy to setup. Check the [Groovy installation guide](http://groovy.codehaus.org/Installing+Groovy) .  
+- Groovy a Java based script langage. It's easy to setup. Check the [Groovy installation guide](http://groovy.codehaus.org/Installing+Groovy) .  
 - [D3 library](http://d3js.org/) 
 
 If Groovy is an issue, you may rewrite the script with another langage and share it. Check ["Implementation details"]("#implementation-details")
