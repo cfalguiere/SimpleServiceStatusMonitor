@@ -45,9 +45,11 @@ def outputFile = new File('status-page.html')
 // process
 //
 
-def services = 
-  [ [ 'server': 'does not exist',  'url': 'http://does not exist' ],
-    [ 'server': 'www.google.com',  'url': 'http://www.google.com' ]]
+def services =
+    [   [ 'protocol': 'ip', 'value': 'www.google.com' ],
+        [ 'protocol': 'http', 'value': 'http://www.google.com' ],
+        [ 'protocol': 'ip', 'value': 'does not exist' ],
+        [ 'protocol': 'http', 'value': 'http://doesnotexist' ]]
 
 def readingCount = 0
 def maxReadingCount = -1 // -1 stands for forever
@@ -58,8 +60,17 @@ while (keepon(readingCount, maxReadingCount)) {
   def timestamp = (new Date()).toString()
     println "at ${timestamp}"
   def statuses =  services.collect() { service ->
-    println "checking ${service} ..."
-    service << [ 'serverstatus': pingServer(service.server),  'urlstatus': pingUrl(service.url) ]
+      println "checking ${service} ..."
+      switch ( service.protocol ) {
+          case 'ip':
+              service << [ 'status': pingServer(service.value) ]
+              break
+          case 'http':
+              service << [ 'status': pingUrl(service.value) ]
+              break
+          default:
+              println "undefined protocol ${service.type} ..."
+      }
   }
   def json = new groovy.json.JsonBuilder(statuses).toString()
   //println json
