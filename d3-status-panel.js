@@ -2,7 +2,7 @@ function statusPanel(node) {
 
 var w = 500;
 var h = 500;
-var circleRadius = 12
+var circleRadius = 14
 var verticalStep = 3 * circleRadius
 var verticalOffset = 25
 
