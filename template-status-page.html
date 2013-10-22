@@ -3,8 +3,10 @@
     <head>
         <meta charset="utf-8">
         <title>Simple Service Status Monitor</title>
+        <link rel="stylesheet" type="text/css" href="status-page.css">
         <script type="text/javascript" src="d3.v3/d3.v3.js"></script>
         <script type="text/javascript" src="d3-status-panel.js"></script>
+        <script type="text/javascript" src="d3-status-bar.js"></script>
         <script type="text/JavaScript">
         <!--
         function timedRefresh(timeoutPeriod) {
@@ -18,11 +20,16 @@
 <h1> Services Status </h1>
 <p> At <%= date %> </p>
 <div id="svg"> </div>
+<div id="barchartdd"></div>
+<div id="chartvalues"></div>
+<div id="barchart"> </div>
 
         <script type="text/javascript"> 
 var dataset = <%= data %>;
 statusPanel("#svg")
+serviceDropDown("#barchartdd")
         </script>
+
 
     </body>
 </html>   

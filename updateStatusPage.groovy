@@ -46,10 +46,10 @@ def outputFile = new File('status-page.html')
 //
 
 def services =
-    [   [ 'protocol': 'ip', 'value': 'www.google.com' ],
-        [ 'protocol': 'http', 'value': 'http://www.google.com' ],
-        [ 'protocol': 'ip', 'value': 'does not exist' ],
-        [ 'protocol': 'http', 'value': 'http://doesnotexist' ]]
+    [   [ 'protocol': 'ip', 'value': 'www.google.com', 'history':[] ],
+        [ 'protocol': 'http', 'value': 'http://www.google.com', 'history':[]  ],
+        [ 'protocol': 'ip', 'value': 'does not exist', 'history':[]  ],
+        [ 'protocol': 'http', 'value': 'http://doesnotexist', 'history':[]  ]]
 
 def readingCount = 0
 def maxReadingCount = -1 // -1 stands for forever
@@ -63,10 +63,14 @@ while (keepon(readingCount, maxReadingCount)) {
       println "checking ${service} ..."
       switch ( service.protocol ) {
           case 'ip':
-              service << [ 'status': pingServer(service.value) ]
+              def status =  pingServer(service.value)
+              service.history << (status>0?1:-1)
+              service << [ 'status': status ]
               break
           case 'http':
-              service << [ 'status': pingUrl(service.value) ]
+              def status =  pingUrl(service.value)
+              service.history << (status>-1?1:-1)
+              service << [ 'status': status ]
               break
           default:
               println "undefined protocol ${service.type} ..."

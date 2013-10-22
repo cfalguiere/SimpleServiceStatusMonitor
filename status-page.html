@@ -3,8 +3,10 @@
     <head>
         <meta charset="utf-8">
         <title>Simple Service Status Monitor</title>
+        <link rel="stylesheet" type="text/css" href="status-page.css">
         <script type="text/javascript" src="d3.v3/d3.v3.js"></script>
         <script type="text/javascript" src="d3-status-panel.js"></script>
+        <script type="text/javascript" src="d3-status-bar.js"></script>
         <script type="text/JavaScript">
         <!--
         function timedRefresh(timeoutPeriod) {
@@ -16,13 +18,18 @@
     <body onload="JavaScript:timedRefresh(5000);">
 
 <h1> Services Status </h1>
-<p> At Tue Oct 22 21:52:35 CEST 2013 </p>
+<p> At Tue Oct 22 23:27:37 CEST 2013 </p>
 <div id="svg"> </div>
+<div id="barchartdd"></div>
+<div id="chartvalues"></div>
+<div id="barchart"> </div>
 
         <script type="text/javascript"> 
-var dataset = [{"protocol":"ip","value":"www.google.com","status":0},{"protocol":"http","value":"http://www.google.com","status":0},{"protocol":"ip","value":"does not exist","status":64},{"protocol":"http","value":"http://doesnotexist","status":-1}];
+var dataset = [{"protocol":"ip","value":"www.google.com","history":[-1,-1,-1],"status":0},{"protocol":"http","value":"http://www.google.com","history":[1,1,1],"status":0},{"protocol":"ip","value":"does not exist","history":[1,1,1],"status":64},{"protocol":"http","value":"http://doesnotexist","history":[-1,-1,-1],"status":-1}];
 statusPanel("#svg")
+serviceDropDown("#barchartdd")
         </script>
+
 
     </body>
 </html>   
