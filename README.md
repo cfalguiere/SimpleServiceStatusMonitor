@@ -5,7 +5,7 @@ A simple service status monitor based on Groovy and D3
 
 ## Motivation
 
-Nagios or other monitoring tools are great but they requires some infrastructure (a web server, a database, a linux server …).
+Nagios or other monitoring tools are great but they require some infrastructure (a web server, a database, a linux server …).
 
 This tool is a very simple status monitor HTML page. It relies on very common components and does not require an infrastructure or a database. 
 
@@ -102,7 +102,7 @@ Head must have the d3 library and the status panel function.
         <script type="text/javascript" src="d3.v3/d3.v3.js"></script>
         <script type="text/javascript" src="d3-status-panel.js"></script>
 
-In body, take care of the followinf lines
+In body, take care of the following lines
 
 	<p> At <%= date %> </p>
 	<div id="svg"> </div>
